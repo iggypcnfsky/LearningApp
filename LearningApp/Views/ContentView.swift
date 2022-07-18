@@ -22,24 +22,34 @@ struct ContentView: View {
                         
                         ForEach(model.currentModule!.content.lessons) {lesson in
                             //Row
-                            ZStack{
-                                Rectangle().foregroundColor(.white)
-                                    .cornerRadius(15)
-                                    .shadow(radius: 5)
-                                HStack{
-                                    Text(String(lesson.id + 1))
-                                        .bold()
-                                        .padding()
-                                    VStack(alignment: .leading, spacing: 3){
-                                        Text(lesson.title)
-                                            .bold()
-                                        Text(lesson.duration)
-                                            .font(.caption)
+                            
+                            NavigationLink {
+                                ContentDetailView()
+                                    .onAppear() {
+                                        model.beginLesson(lessonid: lesson.id, modelid: model.currentModule?.id ?? 0)
                                     }
-                                    Spacer()
-                                }.padding(.horizontal, 10)
-                                    .padding(.vertical, 5)
+                            } label: {
+                                ZStack{
+                                    Rectangle().foregroundColor(.white)
+                                        .cornerRadius(15)
+                                        .shadow(radius: 5)
+                                    HStack{
+                                        Text(String(lesson.id + 1))
+                                            .bold()
+                                            .padding()
+                                        VStack(alignment: .leading, spacing: 3){
+                                            Text(lesson.title)
+                                                .bold()
+                                            Text(lesson.duration)
+                                                .font(.caption)
+                                        }
+                                        Spacer()
+                                    }.padding(.horizontal, 10)
+                                        .padding(.vertical, 5)
+                                }
                             }
+
+                            
                         }
                         
                     }
@@ -49,11 +59,15 @@ struct ContentView: View {
                     
             } //ScrlView
             .navigationTitle("Learn \(model.currentModule?.category ?? "")")
+            .accentColor(.black)
+            
             
         }
         .onAppear() {
             model.beginModule(moduleid: 0)
         }
+        //.navigationViewStyle(.stack)
+        
 
     }
 }

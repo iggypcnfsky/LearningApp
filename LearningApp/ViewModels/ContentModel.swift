@@ -19,6 +19,10 @@ class ContentModel: ObservableObject {
     @Published var currentModule: Module?
     var currentModuleIndex = 0
     
+    //Current lesson(state of things)
+    @Published var currentLesson: Lesson?
+    var currentLessonIndex = 0
+    
     
     var styleData: Data?
     
@@ -83,7 +87,60 @@ class ContentModel: ObservableObject {
         currentModule = modules[currentModuleIndex]
     }
     
+    
+    
+    // MARK: LESSON NAVIGATION METHODS
+    
+    func beginLesson(lessonid:Int, modelid:Int) {
+        //find the index for this module id
+        for index in 0..<modules[modelid].content.lessons.count {
+            if modules[modelid].content.lessons[index].id == lessonid {
+                //Found the matching module
+                currentLessonIndex = index
+                break
+            }
+        }
         
+        //set the current module
+        currentLesson = modules[modelid].content.lessons[currentLessonIndex]
+    }
+    
+        
+    
+    func hasNextLesson() -> Bool {
+        
+        if currentLessonIndex + 1 < currentModule?.content.lessons.count ?? 0 {
+            return true
+        } else {
+            return false
+        }
+        
+        return false
+        
+    }
+    
+    
+    func nextLesson() {
+        
+        //advance lesson
+        currentLessonIndex += 1
+        
+        
+        //check if lesson is in range
+        if currentLessonIndex < currentModule?.content.lessons.count ?? 0 {
+            
+            //set current lesson to new lesson
+            currentLesson = currentModule?.content.lessons[currentLessonIndex]
+            
+        } else {
+            currentLesson = nil
+            currentLessonIndex = 0
+        }
+        
+        
+    }
+    
+    
     }
     
 

@@ -17,6 +17,10 @@
 		DC2D7E4828843D5700022A5C /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2D7E4728843D5700022A5C /* Models.swift */; };
 		DC2D7E4A28845E2E00022A5C /* CardPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2D7E4928845E2E00022A5C /* CardPreview.swift */; };
 		DC2D7E4C28847A5000022A5C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2D7E4B28847A5000022A5C /* ContentView.swift */; };
+		DC2D7E4E28857EE000022A5C /* ContentDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2D7E4D28857EE000022A5C /* ContentDetailView.swift */; };
+		DC2D7E512885922D00022A5C /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC2D7E502885922D00022A5C /* AVKit.framework */; };
+		DC2D7E532885941700022A5C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2D7E522885941700022A5C /* Constants.swift */; };
+		DC2D7E5528859E8900022A5C /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2D7E5428859E8900022A5C /* ButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +35,10 @@
 		DC2D7E4728843D5700022A5C /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		DC2D7E4928845E2E00022A5C /* CardPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPreview.swift; sourceTree = "<group>"; };
 		DC2D7E4B28847A5000022A5C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		DC2D7E4D28857EE000022A5C /* ContentDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentDetailView.swift; sourceTree = "<group>"; };
+		DC2D7E502885922D00022A5C /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
+		DC2D7E522885941700022A5C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		DC2D7E5428859E8900022A5C /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC2D7E512885922D00022A5C /* AVKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -49,6 +58,7 @@
 			children = (
 				DC2D7E2D2882FB4400022A5C /* LearningApp */,
 				DC2D7E2C2882FB4400022A5C /* Products */,
+				DC2D7E4F2885922D00022A5C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -89,6 +99,8 @@
 				DC2D7E302882FB4400022A5C /* HomeView.swift */,
 				DC2D7E4928845E2E00022A5C /* CardPreview.swift */,
 				DC2D7E4B28847A5000022A5C /* ContentView.swift */,
+				DC2D7E4D28857EE000022A5C /* ContentDetailView.swift */,
+				DC2D7E5428859E8900022A5C /* ButtonView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -113,6 +125,7 @@
 		DC2D7E3F2882FBF000022A5C /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				DC2D7E522885941700022A5C /* Constants.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -123,6 +136,14 @@
 				DC2D7E4728843D5700022A5C /* Models.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		DC2D7E4F2885922D00022A5C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DC2D7E502885922D00022A5C /* AVKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,12 +218,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC2D7E4E28857EE000022A5C /* ContentDetailView.swift in Sources */,
 				DC2D7E4A28845E2E00022A5C /* CardPreview.swift in Sources */,
 				DC2D7E4C28847A5000022A5C /* ContentView.swift in Sources */,
 				DC2D7E312882FB4400022A5C /* HomeView.swift in Sources */,
 				DC2D7E4828843D5700022A5C /* Models.swift in Sources */,
 				DC2D7E2F2882FB4400022A5C /* LearningApp.swift in Sources */,
 				DC2D7E422882FC1B00022A5C /* ContentModel.swift in Sources */,
+				DC2D7E532885941700022A5C /* Constants.swift in Sources */,
+				DC2D7E5528859E8900022A5C /* ButtonView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
