@@ -14,7 +14,7 @@ struct HomeView: View {
     var body: some View {
         
         
-        NavigationView{
+        NavigationView {
             VStack(alignment: .leading) {
                 
                 Text("What do you want to do today?")
@@ -26,7 +26,7 @@ struct HomeView: View {
                             
                             VStack {
                                 
-                                NavigationLink {
+                                NavigationLink (tag: module.id, selection: $model.mainNavSelectionIndex) {
                                     ContentView()
                                         .onAppear() {
                                             model.beginModule(moduleid: module.id)
@@ -35,6 +35,8 @@ struct HomeView: View {
                                     //Learing Card
                                     CardPreview(image: module.content.image, category: module.category, description: module.content.description, lessonNumber: module.content.lessons.count, time: module.content.time, context:"learn")
                                 }
+
+
                                 
                                 
                                 
@@ -60,13 +62,15 @@ struct HomeView: View {
                     .accentColor(.black)
                     .padding(.horizontal, 10)
                 } //sV
-                .navigationTitle("Get Started")
+                
                 
                 
                 
             }
-        }
-        //.navigationViewStyle(.stack)
+            .navigationTitle("Get Started")
+            
+        }.navigationViewStyle(.stack)
+        
         
         
     }

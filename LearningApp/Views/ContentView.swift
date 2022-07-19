@@ -13,9 +13,9 @@ struct ContentView: View {
     
     var body: some View {
         
-        NavigationView {
             
             ScrollView {
+                
                 LazyVStack(spacing: 15) {
                     
                     if model.currentModule != nil {
@@ -23,7 +23,8 @@ struct ContentView: View {
                         ForEach(model.currentModule!.content.lessons) {lesson in
                             //Row
                             
-                            NavigationLink {
+                            
+                            NavigationLink  {
                                 ContentDetailView()
                                     .onAppear() {
                                         model.beginLesson(lessonid: lesson.id, modelid: model.currentModule?.id ?? 0)
@@ -50,6 +51,11 @@ struct ContentView: View {
                             }
 
                             
+                            
+
+
+
+                            
                         }
                         
                     }
@@ -60,13 +66,9 @@ struct ContentView: View {
             } //ScrlView
             .navigationTitle("Learn \(model.currentModule?.category ?? "")")
             .accentColor(.black)
-            
-            
-        }
-        .onAppear() {
-            model.beginModule(moduleid: 0)
-        }
-        //.navigationViewStyle(.stack)
+            .onAppear() {
+                model.beginModule(moduleid: 0)}
+        
         
 
     }

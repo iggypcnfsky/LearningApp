@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC035CBC28869B120052728E /* CodeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC035CBB28869B120052728E /* CodeTextView.swift */; };
 		DC2D7E2F2882FB4400022A5C /* LearningApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2D7E2E2882FB4400022A5C /* LearningApp.swift */; };
 		DC2D7E312882FB4400022A5C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2D7E302882FB4400022A5C /* HomeView.swift */; };
 		DC2D7E332882FB4800022A5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC2D7E322882FB4800022A5C /* Assets.xcassets */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DC035CBB28869B120052728E /* CodeTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeTextView.swift; sourceTree = "<group>"; };
 		DC2D7E2B2882FB4400022A5C /* LearningApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LearningApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC2D7E2E2882FB4400022A5C /* LearningApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningApp.swift; sourceTree = "<group>"; };
 		DC2D7E302882FB4400022A5C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 				DC2D7E4B28847A5000022A5C /* ContentView.swift */,
 				DC2D7E4D28857EE000022A5C /* ContentDetailView.swift */,
 				DC2D7E5428859E8900022A5C /* ButtonView.swift */,
+				DC035CBB28869B120052728E /* CodeTextView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -224,6 +227,7 @@
 				DC2D7E312882FB4400022A5C /* HomeView.swift in Sources */,
 				DC2D7E4828843D5700022A5C /* Models.swift in Sources */,
 				DC2D7E2F2882FB4400022A5C /* LearningApp.swift in Sources */,
+				DC035CBC28869B120052728E /* CodeTextView.swift in Sources */,
 				DC2D7E422882FC1B00022A5C /* ContentModel.swift in Sources */,
 				DC2D7E532885941700022A5C /* Constants.swift in Sources */,
 				DC2D7E5528859E8900022A5C /* ButtonView.swift in Sources */,
