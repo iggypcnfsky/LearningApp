@@ -9,6 +9,9 @@ import SwiftUI
 
 struct CodeTextView: UIViewRepresentable {
     
+    var textSource:NSAttributedString?
+    var backgroundColor:Color = Color.gray
+    
     
     @EnvironmentObject var model:ContentModel
     
@@ -22,9 +25,10 @@ struct CodeTextView: UIViewRepresentable {
     }
     
     func updateUIView(_ viewText: UITextView, context: Context) {
-        //set the attributed text for the lesson
         
-        viewText.attributedText = model.lessonDescription
+        //viewText.attributedText = model.lessonDescription
+        viewText.attributedText = textSource!
+        
         
         viewText.scrollRectToVisible(CGRect(x: 0, y: 0, width: 1, height: 1), animated: false)
     }

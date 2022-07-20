@@ -22,6 +22,7 @@
 		DC2D7E512885922D00022A5C /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC2D7E502885922D00022A5C /* AVKit.framework */; };
 		DC2D7E532885941700022A5C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2D7E522885941700022A5C /* Constants.swift */; };
 		DC2D7E5528859E8900022A5C /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2D7E5428859E8900022A5C /* ButtonView.swift */; };
+		DCD608682888035100A8BCD4 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD608672888035100A8BCD4 /* TestView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		DC2D7E502885922D00022A5C /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		DC2D7E522885941700022A5C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		DC2D7E5428859E8900022A5C /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
+		DCD608672888035100A8BCD4 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				DC2D7E4D28857EE000022A5C /* ContentDetailView.swift */,
 				DC2D7E5428859E8900022A5C /* ButtonView.swift */,
 				DC035CBB28869B120052728E /* CodeTextView.swift */,
+				DCD608672888035100A8BCD4 /* TestView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -223,6 +226,7 @@
 			files = (
 				DC2D7E4E28857EE000022A5C /* ContentDetailView.swift in Sources */,
 				DC2D7E4A28845E2E00022A5C /* CardPreview.swift in Sources */,
+				DCD608682888035100A8BCD4 /* TestView.swift in Sources */,
 				DC2D7E4C28847A5000022A5C /* ContentView.swift in Sources */,
 				DC2D7E312882FB4400022A5C /* HomeView.swift in Sources */,
 				DC2D7E4828843D5700022A5C /* Models.swift in Sources */,

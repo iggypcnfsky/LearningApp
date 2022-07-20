@@ -15,19 +15,16 @@ struct ButtonView: View {
     
     var body: some View {
         
+        
         ZStack {
-            
-            Rectangle()
-                .foregroundColor(buttonColor)
-                .frame(height: 48)
-                
-                .cornerRadius(12)
-            
             Text(buttonText)
-                .foregroundColor(textColor)
-                .bold()
-            
+                    .foregroundColor(textColor)
+                    .padding()
+                    .background(buttonColor)
+                    .cornerRadius(12)
+                .shadow(radius: 10)
         }
+        
         
         
     }

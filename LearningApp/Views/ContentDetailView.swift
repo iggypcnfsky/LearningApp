@@ -26,7 +26,7 @@ struct ContentDetailView: View {
                             .frame(height: 200)
                         
                         
-                        CodeTextView()
+                        CodeTextView(textSource: model.lessonDescription)
 
                         
                         //show button if there is a next lesson.

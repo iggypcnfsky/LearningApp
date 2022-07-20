@@ -27,9 +27,16 @@ class ContentModel: ObservableObject {
     //Current lesson explanation
     @Published var lessonDescription = NSAttributedString()
     
+    //Current question explanation
+    @Published var questionDescription = NSAttributedString()
+    
     //State of the navigationLink Selection
     @Published var mainNavSelectionIndex:Int?
-    @Published var lessonNavSelectionIndex:Int?
+    
+    
+    //State of test questions
+    @Published var currentQuestion: Question?
+    var currentQuestionIndex = 0
     
     
     
@@ -115,6 +122,22 @@ class ContentModel: ObservableObject {
         lessonDescription = addStyling(currentLesson!.explanation)
     }
     
+    
+    func beginQuestion(questionid:Int) {
+        
+        for index in 0..<currentModule!.test.questions.count {
+            if currentModule?.test.questions[index].id == questionid {
+                currentQuestionIndex = index
+                break
+            }
+        }
+        
+        currentQuestion = currentModule?.test.questions[currentQuestionIndex]
+        //add styling to the HTML rich text.
+        questionDescription = addStyling(currentQuestion!.content)
+        
+    }
+    
         
     
     func hasNextLesson() -> Bool {
@@ -125,8 +148,14 @@ class ContentModel: ObservableObject {
             return false
         }
         
-        return false
-        
+    }
+    
+    func hasNextQuestion() -> Bool {
+        if currentQuestionIndex + 1 < currentModule?.test.questions.count ?? 0 {
+            return true
+        } else {
+            return false
+        }
     }
     
     
@@ -149,6 +178,24 @@ class ContentModel: ObservableObject {
         }
         
         
+    }
+    
+    
+    func nextQuestion() {
+        //advance question
+        currentQuestionIndex += 1
+        
+        //check if question is in range
+        if currentQuestionIndex < currentModule?.test.questions.count ?? 0 {
+            //set current question to new question
+            currentQuestion = currentModule?.test.questions[currentQuestionIndex]
+            
+            //add styling to the HTML rich text.
+            questionDescription = addStyling(currentQuestion!.content)
+        } else {
+            currentQuestion = nil
+            currentQuestionIndex = 0
+        }
     }
     
     

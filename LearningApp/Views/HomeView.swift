@@ -40,31 +40,25 @@ struct HomeView: View {
                                 
                                 
                                 
-                                NavigationLink {
-                                    //
+                                NavigationLink(tag: 1, selection: $model.mainNavSelectionIndex) {
+                                    TestView()
+                                        .onAppear() {
+                                            model.beginModule(moduleid: module.id)
+                                            model.currentQuestionIndex = 0
+                                            model.beginQuestion(questionid: model.currentQuestionIndex)
+                                        }
                                 } label: {
                                     //Test Card
                                     CardPreview(image: module.test.image, category: module.category, description: module.test.description, lessonNumber: module.test.questions.count, time: module.test.time, context:"test")
                                 }
                                 
-                                
-                                
-                                
-                                
-                                
-                                
-                                
                             }.padding(.top,10)
-                            
-                            
+
                         }
                     } //lV
                     .accentColor(.black)
                     .padding(.horizontal, 10)
                 } //sV
-                
-                
-                
                 
             }
             .navigationTitle("Get Started")
