@@ -12,6 +12,8 @@ struct TestView: View {
     @EnvironmentObject var model:ContentModel
     
     @State var buttonColor = Color.white
+    @State var submitted = false
+    @State var userAnswer:Int?
     
     var body: some View {
         VStack {
@@ -30,23 +32,30 @@ struct TestView: View {
             
             
             
-            ForEach(0..<(model.currentQuestion?.answers.count ?? 4), id: \.self) {index in
-                
-                Button {
+            LazyVStack {
+                ForEach(0..<(model.currentQuestion?.answers.count ?? 4), id: \.self) {index in
                     
-                    let userAnswer = index
-                    if userAnswer == model.currentQuestion?.correctIndex ?? 0 {
-                        buttonColor = Color.green
-                    } else {
-                        buttonColor = Color.red
-                    }
-                } label: {
-                    ButtonView(buttonText: String(model.currentQuestion?.answers[index] ?? "Preview Answer"), buttonColor: buttonColor, textColor: Color.black)
-                }
+                    Button {
+                        
+                        userAnswer = index
+                        submitted = true
+                        if userAnswer == model.currentQuestion?.correctIndex ?? 0 {
+                            buttonColor = Color.green
+                        } else {
+                            buttonColor = Color.red
+                        }
+                    } label: {
 
-                
+                        ButtonView(buttonText: String(model.currentQuestion?.answers[index] ?? "Preview Answer"), buttonColor: buttonColor, textColor: Color.black)
+                        
+                    }
+                    //.disabled(submitted)
+
                     
-            }.offset(y:-100)
+                        
+                }.offset(y:-100)
+            }
+                
             
             Spacer()
             
@@ -56,18 +65,20 @@ struct TestView: View {
                     
                     model.nextQuestion()
                     buttonColor = Color.white
+                    submitted = false
                     
                 } label: {
                     ButtonView(buttonText: "Next Question", buttonColor: Color.green, textColor: Color.white)
-                }
+                }.disabled(!submitted)
                 
             } else {
                 
                 Button {
                     model.mainNavSelectionIndex = nil
                 } label: {
+                    
                     ButtonView(buttonText: "Submit", buttonColor: Color.green, textColor: Color.white)
-                }
+                }.disabled(!submitted)
             }
             
             
