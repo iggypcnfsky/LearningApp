@@ -195,6 +195,7 @@ class ContentModel: ObservableObject {
         } else {
             currentQuestion = nil
             currentQuestionIndex = 0
+            mainNavSelectionIndex = nil
         }
     }
     
